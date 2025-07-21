@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
-mongoose.connect("");
+const dotenv = require("dotenv");
+dotenv.config();
+
+const Url = process.env.mongoUrl;
+
+mongoose.connect(Url);
 
 const userSchema = new mongoose.Schema({
     username: {
