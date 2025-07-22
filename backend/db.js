@@ -1,7 +1,8 @@
 // backend/db.js
 const mongoose = require('mongoose');
+require('dotenv').config({ path: './db.env' });
 
-mongoose.connect("mongodb://localhost:27017/paytm")
+mongoose.connect(process.env.myurl);
 
 // Create a Schema for Users
 const userSchema = new mongoose.Schema({
